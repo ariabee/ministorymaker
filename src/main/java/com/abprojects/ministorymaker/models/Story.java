@@ -1,9 +1,8 @@
 package com.abprojects.ministorymaker.models;
 
 import com.abprojects.ministorymaker.models.*;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +12,8 @@ public class Story extends AbstractEntity {
     @ManyToOne // many Stories for each User
     private User maker;
 
-    @ManyToMany
-	private List<StorySentence> randomStory = new ArrayList<>();
+    @OneToOne(cascade = CascadeType.ALL)
+	private RandomStory randomStory = new RandomStory();
 
     private String newSentence;
 
@@ -24,7 +23,7 @@ public class Story extends AbstractEntity {
 
 	public Story() {}
 
-	public Story(List<StorySentence> randomStory, String newSentence, String title, int rating) {
+	public Story(RandomStory randomStory, String newSentence, String title, int rating) {
 	    this.randomStory = randomStory;
 	    this.newSentence = newSentence;
 	    this.title = title;
@@ -39,11 +38,11 @@ public class Story extends AbstractEntity {
         this.maker = maker;
     }
 
-    public List<StorySentence> getRandomStory() {
+    public RandomStory getRandomStory() {
         return randomStory;
     }
 
-    public void setRandomStory(List<StorySentence> randomStory) {
+    public void setRandomStory(RandomStory randomStory) {
         this.randomStory = randomStory;
     }
 

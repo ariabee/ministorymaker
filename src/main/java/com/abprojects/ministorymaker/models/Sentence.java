@@ -2,27 +2,29 @@ package com.abprojects.ministorymaker.models;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class StorySentence extends AbstractEntity {
+public class Sentence extends AbstractEntity {
 
     private String author;
 
 	private String writtenWork;
 
-    @ManyToMany(mappedBy = "randomStory")
-	private List<Story> storiesUsedIn = new ArrayList<>();
+	@ManyToMany(mappedBy = "randomSentences")
+    // mappedBy ensures Hibernate populates the storiesUsedIn collection of a given Sentence
+    // with every RandomStory that has that sentence in its randomSentences collection.
+	private List<RandomStory> storiesUsedIn = new ArrayList<>();
 
 	private int publicationYear;
 
-	public StorySentence() {}
+	public Sentence() {}
 
-    public StorySentence(String author, String writtenWork, List<Story> storiesUsedIn, int publicationYear) {
+    public Sentence(String author, String writtenWork, int publicationYear) {
         this.author = author;
         this.writtenWork = writtenWork;
-        this.storiesUsedIn = storiesUsedIn;
         this.publicationYear = publicationYear;
     }
 
@@ -42,11 +44,11 @@ public class StorySentence extends AbstractEntity {
         this.writtenWork = writtenWork;
     }
 
-    public List<Story> getStoriesUsedIn() {
+    public List<RandomStory> getStoriesUsedIn() {
         return storiesUsedIn;
     }
 
-    public void setStoriesUsedIn(List<Story> storiesUsedIn) {
+    public void setStoriesUsedIn(List<RandomStory> storiesUsedIn) {
         this.storiesUsedIn = storiesUsedIn;
     }
 
