@@ -32,7 +32,7 @@ nav .navbar-toggler {
 }
 
 main {
-    min-height: 500px;
+    min-height: 800px;
     padding-top: 1em;
     padding-bottom: 1em;
 }
@@ -62,6 +62,10 @@ form legend {
     color: white;
 }
 
+#makeAStory form input, .randomSentence {
+    font-size: 20px;
+}
+
 #generatedStory {
      margin-bottom: 1em;
  }
@@ -76,7 +80,6 @@ form legend {
     display: block;
     width: 100%;
     padding: .375rem .75rem;
-    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     background-color: #fff;
@@ -93,11 +96,10 @@ form legend {
 
 #randomSentence, #newSentence {
     line-height: 1.75;
-    font-size: 100%;
 }
 
 /*Make A Story rating radio button stars*/
-#makeastory fieldset {
+#makeAStory fieldset {
     margin: .5em auto;
 }
 fieldset.radio legend {
@@ -131,3 +133,7 @@ label.radio-field {
 .radioWrapper:hover .radio-field { /* Resets preceding-stars effect when mouse hovers over a new star */
 }
 
+#makeAStory {
+    max-width: 750px;
+    margin: 3em auto;
+}
