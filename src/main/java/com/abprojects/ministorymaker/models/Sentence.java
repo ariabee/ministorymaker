@@ -10,8 +10,8 @@ import java.util.List;
 public class Sentence extends AbstractEntity {
 
     private String author;
-
 	private String writtenWork;
+	private String text;
 
 	@ManyToMany(mappedBy = "randomSentences")
     // mappedBy ensures Hibernate populates the storiesUsedIn collection of a given Sentence
@@ -22,10 +22,23 @@ public class Sentence extends AbstractEntity {
 
 	public Sentence() {}
 
-    public Sentence(String author, String writtenWork, int publicationYear) {
-        this.author = author;
+    public Sentence(String text, String author, String writtenWork, int publicationYear) {
+        this.text = text;
+	    this.author = author;
         this.writtenWork = writtenWork;
         this.publicationYear = publicationYear;
+    }
+
+    public Sentence(String text) {
+	    this(text, "author", "written work", 2020);
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getAuthor() {
@@ -58,5 +71,10 @@ public class Sentence extends AbstractEntity {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
+    }
+
+    @Override
+    public String toString() {
+	    return this.text;
     }
 }

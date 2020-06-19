@@ -5,7 +5,34 @@
 <body>
 
     <header th:replace="fragments :: header"></header>
-    <main></main>
+
+    <main class="container">
+        <article>
+            <section id="howToMake">
+                <h1>Make a story!</h1>
+            </section>
+            <section id="makeTheStory">
+                <div id="generatedStory">
+                    <th:block th:each="sentence : ${story.randomStory.randomSentences}">
+                        <p class="randomSentence" th:text="${sentence}"/>
+                    </th:block>
+                </div>
+                <form method="post">
+                    <div class="form-group">
+                        <th:block th:each="sentence : ${story.randomStory.randomSentences}">
+                            <input type="hidden" class="hiddenSentence" th:value="${sentence}"/>
+                        </th:block>
+                        <label class="hidden" for="newSentence">Add text to finish the story:</label>
+                        <input type="textarea" id="newSentence" th:field="${story.newSentence}" placeholder="Type here to finish the story." onfocus="this.select()" tabindex="300" class="form-control"/>
+                        <p class="error" th:errors="${story.newSentence}"></p>
+                    </div>
+
+                    <input type="submit" value="Save Story" class="btn btn-save"/>
+                </form>
+            </section>
+        </article>
+    </main>
+
     <footer th:replace="fragments :: footer"></footer>
 
 </body>
