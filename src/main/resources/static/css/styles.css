@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background-image: linear-gradient(152deg,#2C9CBA 50%,#4E66C4);
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+header {
+    background: white;
+}
+
+header nav a {
+    color: #4E66C4;
+    font-weight: bolder;
+}
+
+a:hover {
+    color: #2C9CBA;
+}
+
+/* Temporary navbar toggler design */
+nav .navbar-toggler {
+    background-color: white;
+    border-radius: 50%;
+    width: 44px;
+}
+
+main {
+    min-height: 500px;
+}
+
+footer {
+    color: #ffffff9c;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}

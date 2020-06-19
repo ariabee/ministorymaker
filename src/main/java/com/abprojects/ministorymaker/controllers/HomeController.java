@@ -13,9 +13,4 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("makeastory")
-    public String renderMakeAStoryForm(Model model) {
-        model.addAttribute("title", "Make a Story");
-        return "makeastory";
-    }
 }
