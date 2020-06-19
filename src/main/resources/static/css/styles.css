@@ -7,6 +7,10 @@ body {
     height: 100%;
 }
 
+h1 {
+    color: #FCE09E;
+}
+
 header {
     background: white;
 }
@@ -40,7 +44,6 @@ footer {
 }
 
 form legend {
-    display: none;
 }
 
 .hidden {
@@ -59,5 +62,72 @@ form legend {
     color: white;
 }
 
+#generatedStory {
+     margin-bottom: 1em;
+ }
 
+ #generatedStory p.randomSentence {
+     margin-bottom: 0;
+ }
+
+#generatedStory, #newSentence {
+    background: white;
+    color: #4e67c4;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: 2px 2px 18px #0d6177;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#newSentence {
+
+}
+
+#randomSentence, #newSentence {
+    line-height: 1.75;
+    font-size: 100%;
+}
+
+/*Make A Story rating radio button stars*/
+#makeastory fieldset {
+    margin: .5em auto;
+}
+fieldset.radio legend {
+    margin: .5em auto;
+}
+.hide {
+    display: none;
+}
+input[type="radio"], input[type="checkbox"] {
+    background-color: initial;
+    cursor: default;
+    margin: 3px 0.5ex;
+}
+label.radio-field {
+    color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    display: inline;
+    font-size: 1.5em;
+    margin: 0;
+    padding: .2em;
+    text-shadow: 1px 1px 0px #0d6177;
+}
+.radio-field:hover, .radio-field:hover ~ .radio-field,
+ input[type="radio"]:checked ~ .radio-field {
+    color: #ffe19d;
+}
+.radioWrapper {
+    direction: rtl;
+    text-align: center;
+}
+.radioWrapper:hover .radio-field { /* Resets preceding-stars effect when mouse hovers over a new star */
+}
 

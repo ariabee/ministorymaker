@@ -26,6 +26,32 @@
                         <input type="textarea" id="newSentence" th:field="${story.newSentence}" placeholder="Type here to finish the story." onfocus="this.select()" tabindex="300" class="form-control"/>
                         <p class="error" th:errors="${story.newSentence}"></p>
                     </div>
+                    <div class="form-group">
+                        <label for="newSentence">Add a title:</label>
+                        <input type="text" id="title" th:field="${story.title}" placeholder="Title of story" class="form-control"/>
+                        <p class="error" th:errors="${story.title}"></p>
+                    </div>
+                    <div class="form-group">
+                        <fieldset class="radio rating">
+                            <legend>Rate your story: </legend>
+                            <aside class="radioWrapper">
+                                <input type="radio" class="hide" id="radRating5" th:name="${story.rating}" value="5" tabindex="540">
+                                <label class="radio-field" for="radRating5">★</label>
+
+                                <input type="radio" class="hide" id="radRating4" th:name="${story.rating}" value="4" tabindex="530">
+                                <label class="radio-field" for="radRating4">★</label>
+
+                                <input type="radio" class="hide" id="radRating3" th:name="${story.rating}" value="3" tabindex="520">
+                                <label class="radio-field" for="radRating3">★</label>
+
+                                <input type="radio" class="hide" id="radRating2" th:name="${story.rating}" value="2" tabindex="510">
+                                <label class="radio-field" for="radRating2">★</label>
+
+                                <input type="radio" class="hide" id="radRating1" th:name="${story.rating}" value="1" tabindex="500">
+                                <label class="radio-field" for="radRating1">★</label>
+                            </aside>
+                        </fieldset>
+                    </div>
 
                     <input type="submit" value="Save Story" class="btn btn-save"/>
                 </form>
